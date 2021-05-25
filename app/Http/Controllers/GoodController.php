@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\GoodsImport;
+use App\Exports\GoodsExport;
 use App\Models\Good;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -28,7 +29,10 @@ class GoodController extends Controller
 
     }
 
-
+    public function export()
+    {
+        return Excel::download(new GoodsExport(), 'goods.xlsx');
+    }
 
 
     /**
@@ -70,7 +74,7 @@ class GoodController extends Controller
      */
     public function show(Good $good)
     {
-        return $this->success(GoodResource::make($good));
+       // return $this->success(GoodResource::make($good));
     }
 
     /**

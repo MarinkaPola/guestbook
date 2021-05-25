@@ -46,5 +46,9 @@
     </div>
 </form>
 
+<form action="/export" method="get">
+    <button type="submit"  class="btn btn-danger" >Download goods</button>
+</form>
+
 </body>
 </html>

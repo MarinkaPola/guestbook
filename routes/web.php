@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GoodController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
@@ -39,5 +40,6 @@ Route::put('/admin/messages/{message}', [MessageController::class, 'update']);
 
 Route::Resource('user', UserController::class);
 
+Route::get('export', [GoodController::class, 'export']);
 
 Route::fallback([AuthController::class, 'fallback']);
